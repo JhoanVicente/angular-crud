@@ -1,0 +1,113 @@
+/* Contenedor fullscreen centrado */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #FFF4EC, #FFEDE4);
+  padding: 1rem;
+}
+
+/* Tarjeta principal */
+.login-card {
+  background: #ffffff;
+  border-radius: 0.75rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* Header (logo + título) */
+.login-header {
+  text-align: center;
+}
+.login-header img {
+  display: block;
+  margin: 0 auto;
+  width: 72px;
+  height: 72px;
+}
+.login-header h2 {
+  color: #FF6B35;
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* Campos de formulario */
+.field {
+  display: flex;
+  flex-direction: column;
+}
+.field label {
+  margin-bottom: 0.4rem;
+  color: #6B7280;
+  font-size: 0.9rem;
+}
+.field input {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.field input:focus {
+  border-color: #FF6B35;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+}
+
+/* Error */
+.error-msg {
+  color: #DC2626;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+/* Botones */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.actions button {
+  padding: 0.65rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.actions button.accept {
+  background: #FF6B35;
+  color: white;
+}
+.actions button.accept:hover {
+  background: #e65b2b;
+  transform: translateY(-1px);
+}
+.actions button.cancel {
+  background: #fff;
+  color: #4B5563;
+  border: 1px solid #D1D5DB;
+}
+.actions button.cancel:hover {
+  background: #FFEDE4;
+}
+
+/* Registro */
+.register {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #4B5563;
+}
+.register a {
+  color: #FF6B35;
+  text-decoration: underline;
+  margin-left: 0.25rem;
+}

@@ -1,4 +1,4 @@
 export const environment = {
-    mode: 'prod',
-    api: 'https://fastapi-workshop-3953.onrender.com'
+  production: false,
+  apiBase: 'https://fasteat-backend-production.up.railway.app/api'
 };

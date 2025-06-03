@@ -1,0 +1,14 @@
+<app-navbar
+  *ngIf="isLoggedIn"
+  [isLoggedIn]="isLoggedIn"
+  (logout)="onLogout()">
+</app-navbar>
+
+<div class="app-body">
+  <main class="layout-main">
+    <router-outlet></router-outlet>
+  </main>
+</div>
+
+<app-footer></app-footer>
+

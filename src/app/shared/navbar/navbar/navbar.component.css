@@ -1,0 +1,103 @@
+/* 1) Si quieres mantener la barra superior tipo “solo hoy” */
+.top-line {
+  width: 100%;
+  height: 40px;
+  background-color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/* 2) Tarjeta contenedora centrada (igual que mega-card) */
+.navbar-card {
+  width: 100%;
+  max-width: 1200px;
+  margin: 1rem auto 0;
+  padding: 0 1rem;        /* espacio lateral */
+  box-sizing: border-box;
+}
+
+/* 3) Menú que ocupa todo el ancho de la tarjeta */
+.navbar-menu {
+  width: 100% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;    /* centra los items */
+  gap: 2rem;                   /* espacio entre cada enlace */
+  padding: 0.75rem 1rem;
+  background-color: var(--primary-color);
+  border-radius: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+/* 4) Logo */
+.logo,
+.menu-item,
+.order-button {
+  margin: 0 !important;       /* quita márgenes extra */
+}
+
+/* Logo con mayor visibilidad */
+.logo-img {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* 5) Ítems del menú */
+.menu-item {
+  color: #fff !important;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 1.5rem;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.menu-item:hover {
+  background: rgba(255,255,255,0.15);
+  text-decoration: none;
+}
+
+/* 6) Botón “Cerrar sesión” */
+.order-button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.order-button:hover {
+  background: #fff !important;
+  color: var(--primary-color) !important;
+}
+
+/* 7) Responsive para pantallas pequeñas */
+@media (max-width: 768px) {
+  .navbar-card {
+    padding: 0 0.5rem;
+  }
+  .navbar-menu {
+    flex-wrap: wrap !important;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  .logo-img {
+    height: 40px;
+  }
+  .menu-item {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  .order-button {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
