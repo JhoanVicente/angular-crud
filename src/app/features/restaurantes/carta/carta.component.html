@@ -1,0 +1,41 @@
+<p-toast></p-toast>
+
+<div *ngIf="restaurante; else cargando" class="gallery-card">
+  <h2>Menú de {{ restaurante.nombre }}</h2>
+
+  <div *ngIf="promos.length > 0; else noPromos" class="gallery-grid">
+    <div *ngFor="let promo of promos" class="gallery-item">
+      <div class="image-container">
+        <img [src]="promo.url" alt="{{ promo.nombre }}" />
+      </div>
+      <div class="item-content">
+        <div class="text-block">
+          <div class="name">{{ promo.nombre }}</div>
+          <div class="price">{{ promo.precio | currency:'EUR' }}</div>
+        </div>
+        <button
+          pButton
+          icon="pi pi-shopping-cart"
+          label="Agregar"
+          (click)="agregarAlCarrito(promo)"
+        ></button>
+      </div>
+    </div>
+  </div>
+
+  <button
+    pButton
+    type="button"
+    label="Ir a carrito de compras"
+    class="go-cart-btn"
+    (click)="irAlCarrito()"
+  ></button>
+</div>
+
+<ng-template #noPromos>
+  <p>No hay promociones disponibles en este momento.</p>
+</ng-template>
+
+<ng-template #cargando>
+  <p>Cargando restaurante...</p>
+</ng-template>

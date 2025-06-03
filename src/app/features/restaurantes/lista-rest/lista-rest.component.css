@@ -1,0 +1,95 @@
+/* lista-rest.component.css */
+
+/* 0) Reducir la altura del toolbar para que no sea tan grande */
+.toolbar-custom {
+  padding: 0.5rem 1rem !important;
+  background: var(--surface-card) !important;
+  border-radius: 0.5rem;
+}
+
+/* 1) Título en negrita y estilo */
+.toolbar-title {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+/* 2) Contenedor flex para buscador + botón */
+.action-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* 3) Separación y tamaño del icono de lupa */
+.search-wrapper .pi {
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+/* 4) Ajuste del input de búsqueda */
+.search-wrapper input {
+  height: 1.8rem !important;
+  padding: 0.3rem 0.5rem !important;
+  font-size: 0.875rem !important;
+}
+
+/* 5) Placeholder legible */
+.search-wrapper input::placeholder {
+  font-size: 0.875rem;
+  opacity: 0.7;
+}
+
+/* 6) Botón “Nuevo” con estilo igual al “Cerrar sesión” / “Comenzar pedido” */
+
+
+/* 7) Hover del botón “Nuevo” */
+.order-button:hover {
+  background: #fff !important;
+  color: var(--primary-color) !important;
+}
+
+/* 8) Espaciado interior más generoso en filas de la tabla */
+:host ::ng-deep .p-datatable-sm .p-datatable-tbody > tr > td {
+  padding: 0.75rem 1rem;
+}
+
+/* 9) Encabezados de tabla con fondo suave */
+:host ::ng-deep .p-datatable-sm .p-datatable-thead > tr > th {
+  background-color: var(--primary-color-light);
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* 10) Centramos las acciones en la última columna */
+.p-text-center {
+  text-align: center;
+}
+.order-button {
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 15px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* 11) Responsive: mantener alineación en pantallas pequeñas */
+@media (max-width: 768px) {
+  .toolbar-custom {
+    padding: 0.4rem 0.75rem !important;
+  }
+  .toolbar-title {
+    font-size: 1.25rem;
+  }
+  .search-wrapper input {
+    height: 1.6rem !important;
+    font-size: 0.8rem !important;
+  }
+  .order-button {
+    padding: 8px 12px;
+    font-size: 0.875rem;
+  }
+}
