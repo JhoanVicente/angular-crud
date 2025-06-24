@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBase: 'https://fasteat-backend-production.up.railway.app/api'
+  apiUrl: 'https://tu-api-produccion.com/api' // URL de producción
 };

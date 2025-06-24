@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+  <mat-dialog-content>
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="name" placeholder="Nombre del producto" />
+      <mat-error *ngIf="name?.hasError('required')">El nombre es obligatorio.</mat-error>
+      <mat-error *ngIf="name?.hasError('maxlength')">Máximo 100 caracteres.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Descripción</mat-label>
+      <textarea matInput formControlName="description" placeholder="Descripción"></textarea>
+      <mat-error *ngIf="productForm.get('description')?.hasError('maxlength')">Máximo 255 caracteres.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Precio (S/)</mat-label>
+      <input type="number" matInput formControlName="price" min="0" />
+      <mat-error *ngIf="price?.hasError('required')">El precio es obligatorio.</mat-error>
+      <mat-error *ngIf="price?.hasError('min')">El precio no puede ser negativo.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>Categoría</mat-label>
+      <mat-select formControlName="category" placeholder="Seleccione categoría">
+        <mat-option *ngFor="let category of categories" [value]="category.id">
+          {{ category.name }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="category?.hasError('required')">Debe seleccionar una categoría.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="w-100">
+      <mat-label>URL de Imagen</mat-label>
+      <input matInput formControlName="imageUrl" placeholder="https://..." />
+      <mat-error *ngIf="imageUrl?.hasError('pattern')">Debe ser una URL válida de imagen (png, jpg, jpeg, gif, svg).</mat-error>
+    </mat-form-field>
+
+    <mat-checkbox formControlName="status">Activo</mat-checkbox>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="onCancel()">Cancelar</button>
+    <button mat-flat-button color="primary" type="submit">{{ isEdit ? 'Actualizar' : 'Crear' }}</button>
+  </mat-dialog-actions>
+</form>
